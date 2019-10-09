@@ -7,19 +7,19 @@
 		<!--param name="ip" value="169.254.7.205"/-->
 		<!--param name="camera_info_url" value="file://$(find avt_vimba_camera)/calibrations/calibration_50-0503343290.yaml"/-->
 		<param name="AcquisitionFrameRate" value="25"/>
-		<param name="PixelFormat" value="BGR8"/>
+		<param name="PixelFormat" value="Mono8"/>
 		<!--param name="PixelCoding" value="Raw"/-->
 		<param name="ExposureTime" value="20000"/>
 		<param name="dataStreamType" value="Image"/>
 		<param name="GevSCPSPacketSize" value="1500"/>
 		<param name="PixelColorFilter" value="None"/>
 
-			<?ignore <param name="Width" value="4912"/>
+			<param name="Width" value="4912"/>
 			<param name="Height" value="3684"/>
 			<param name="OffsetX" value="0"/>
 			<param name="OffsetY" value="0"/>
 
-			<param name="Width" default="2456"/>
+<?ignore			<param name="Width" default="2456"/>
 			<param name="Height" default="1842"/>
 			<param name="OffsetX" default="1228"/>
 			<param name="OffsetY" default="921"/>
@@ -28,12 +28,12 @@
 			<param name="Height" default="921"/>
 			<param name="OffsetX" default="1842"/>
 			<param name="OffsetY" default="1382"/>
-	 			?>
+	 			
 
 			<param name="Width" value="960"/>
 			<param name="Height" value="1000"/>
 			<param name="OffsetX" value="2356"/>
-			<param name="OffsetY" value="1742"/>
+			<param name="OffsetY" value="1742"/> ?>
 	</node>
 
 </launch>
