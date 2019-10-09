@@ -156,7 +156,7 @@ ArvStream *CreateArvStream(void)
 	if (pStream)
 	{
 		// Load up some buffers.
-		const gint nbytesPayload = arv_camera_get_payload(global.pCamera);
+    const gint nbytesPayload = global.widthRoi * global.heightRoi * global.nBytesPixel;//arv_camera_get_payload(global.pCamera);
 		for (size_t i = 0; i < 50; i++)
 		{
 			arv_stream_push_buffer(pStream, arv_buffer_new(nbytesPayload, NULL));
@@ -581,6 +581,10 @@ static void NewBuffer_callback (ArvStream *pStream, ApplicationData *pApplicatio
 			global.camerainfo.header.frame_id = msg.header.frame_id;
 			global.camerainfo.width = global.widthRoi;
 			global.camerainfo.height = global.heightRoi;
+                        global.camerainfo.roi.width = global.widthRoi;
+                        global.camerainfo.roi.height = global.heightRoi;
+                        global.camerainfo.roi.x_offset = global.xRoi;
+                        global.camerainfo.roi.y_offset = global.yRoi;
 
 			global.publisher.publish(msg, global.camerainfo);
 				
@@ -1070,17 +1074,17 @@ int main(int argc, char** argv)
 		ROS_INFO ("    ---------------------------");
 
 
-//		// Print the tree of camera features, with their values.
-//		ROS_INFO ("    ----------------------------------------------------------------------------------");
-//		NODEEX		 nodeex;
-//		ArvGc	*pGenicam=0;
-//		pGenicam = arv_device_get_genicam(global.pDevice);
-//
-//		nodeex.szName = "Root";
-//		nodeex.pNode = (ArvDomNode	*)arv_gc_get_node(pGenicam, nodeex.szName);
-//		nodeex.pNodeSibling = NULL;
-//		PrintDOMTree(pGenicam, nodeex, 0);
-//		ROS_INFO ("    ----------------------------------------------------------------------------------");
+//                // Print the tree of camera features, with their values.
+//                ROS_INFO ("    ----------------------------------------------------------------------------------");
+//                NODEEX		 nodeex;
+//                ArvGc	*pGenicam=0;
+//                pGenicam = arv_device_get_genicam(global.pDevice);
+
+//                nodeex.szName = "Root";
+//                nodeex.pNode = (ArvDomNode	*)arv_gc_get_node(pGenicam, nodeex.szName);
+//                nodeex.pNodeSibling = NULL;
+//                PrintDOMTree(pGenicam, nodeex, 0);
+//                ROS_INFO ("    ----------------------------------------------------------------------------------");
 			
 
 		while (TRUE)
