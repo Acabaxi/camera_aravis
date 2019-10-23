@@ -1,6 +1,14 @@
+## TODO
+* Check if camera encoding is compatible with ROS encodings 
+	- http://docs.ros.org/jade/api/sensor_msgs/html/image__encodings_8h_source.html
+	- http://isgcameras.com/wp-content/uploads/2015/09/AIA_Pixel_Format_Naming_Convention_1-1-00.pdf
+* Change encoding it to make compatible (Bayer encodings)
+
+# Camera_aravis
+
 camera_aravis - forked from a deleted github repo (https://github.com/CaeruleusAqua/camera_aravis), which was itself forked from ssafarik: https://github.com/ssafarik/camera_aravis.
 
-This ROS node works with aravis version 0.3.7: ftp://ftp.acc.umu.se/pub/GNOME/sources/aravis/0.3
+This ROS node works with aravis version 0.7.1: https://github.com/Acabaxi/aravis/releases/tag/ARAVIS_0_7_1
 
 This is a [ROS](http://ros.org) package for the [Aravis GigEVision
 library](http://live.gnome.org/Aravis). It is open source, under the
@@ -12,6 +20,15 @@ The basic command to run camera_aravis:
 
 	$ rosrun camera_aravis camnode
 
+With roslaunch, single camera:	
+
+	$ roslaunch camera_aravis mono_camera.launch
+	
+The .launch file include a image_proc node, to debayer images that only have Bayer formats
+With roslaunch, multiple cameras:
+	
+	$ Todo
+	
 To run it in a given namespace, which is the better way to do it:
 
 	$ ROS_NAMESPACE=cam1 rosrun camera_aravis camnode
