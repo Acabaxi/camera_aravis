@@ -570,7 +570,14 @@ static void NewBuffer_callback (ArvStream *pStream, ApplicationData *pApplicatio
 			msg.header.frame_id = global.config.frame_id;
 			msg.width = global.widthRoi;
 			msg.height = global.heightRoi;
-			msg.encoding = global.pszPixelformat;
+      //msg.encoding = global.pszPixelformat;
+
+      if(strcmp(global.pszPixelformat,"bayerrg8") == 0){
+          msg.encoding = "bayer_rggb8";
+          //std::cout << "Zas " << global.pszPixelformat << std::endl;
+      }
+
+      //std::cout << msg.encoding << std::endl;
 			msg.step = msg.width * global.nBytesPixel;
 			msg.data = this_data;
 

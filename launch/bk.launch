@@ -1,0 +1,20 @@
+<launch>
+
+	<node name="camera" pkg="camera_aravis" type="camnode" output="screen">
+		<param name="guid" value="S1208038"/>
+		<param name="AcquisitionFrameRate" value="25"/>
+		<param name="PixelFormat" value="BGR8"/>
+		<!--param name="PixelCoding" value="Raw"/-->
+		<param name="ExposureTime" value="20000"/>
+		<param name="dataStreamType" value="Image"/>
+		<param name="GevSCPSPacketSize" value="6000"/>
+		<param name="PixelColorFilter" value="None"/>
+		
+		<param name="Width" default="2456"/>
+                <param name="Height" default="1842"/>
+                <param name="OffsetX" default="1228"/>
+                <param name="OffsetY" default="921"/>
+
+	</node>
+
+</launch>
