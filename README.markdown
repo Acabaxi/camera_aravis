@@ -4,7 +4,26 @@
 	- http://isgcameras.com/wp-content/uploads/2015/09/AIA_Pixel_Format_Naming_Convention_1-1-00.pdf
 * Change encoding it to make compatible (Bayer encodings)
 * Multiple camera .launch file 
+## Installing
 
+1. Install necessary packages:
+	> sudo apt-get install intltool gobject-introspection gtk-doc-tools
+2. Download aravis 0.7.1:
+	> https://github.com/Acabaxi/aravis/releases/tag/ARAVIS_0_7_1
+3. From inside the aravis directory, run the following commands
+	> ./configure
+	> make
+	> sudo make install
+	
+4. Download camera_aravis ROS node:
+	https://github.com/Acabaxi/camera_aravis/
+	
+5. Download driver_common ROS node:
+	https://github.com/Acabaxi/driver_common
+
+6. Build everything
+	> catkin build 
+	
 # Camera_aravis
 
 camera_aravis - forked from a deleted github repo (https://github.com/CaeruleusAqua/camera_aravis), which was itself forked from ssafarik: https://github.com/ssafarik/camera_aravis.
