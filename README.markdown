@@ -2,8 +2,10 @@
 * Check if camera encoding is compatible with ROS encodings 
 	- http://docs.ros.org/jade/api/sensor_msgs/html/image__encodings_8h_source.html
 	- http://isgcameras.com/wp-content/uploads/2015/09/AIA_Pixel_Format_Naming_Convention_1-1-00.pdf
-* Change encoding it to make compatible (Bayer encodings)
-* Multiple camera .launch file 
+* Change DALSA message encoding to make compatible with ROS Bayer types(Bayer encodings)
+* Stereo/Multiple camera .launch file 
+* Camera ID as argument in .launch file
+
 ## Installing
 
 1. Install necessary packages:
